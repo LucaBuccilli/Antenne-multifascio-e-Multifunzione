@@ -1,0 +1,169 @@
+==========================================================================================
+p01 - Fattore di array e puntamento (N = 16, d = lambda/2)
+ theta0 = 0 deg  (alpha = -0.0 deg tra elementi)
+  direzione del massimo                      misurato =      0.000 deg   teorico =      0.000 deg
+  larghezza a -3 dB                          misurato =      6.349 deg   teorico =      6.346 deg
+  lobo laterale massimo (teoria per N grande) misurato =    -13.147 dB    teorico =    -13.260 dB
+ theta0 = 30 deg  (alpha = -90.0 deg tra elementi)
+  direzione del massimo                      misurato =     30.000 deg   teorico =     30.000 deg
+  larghezza a -3 dB                          misurato =      7.337 deg   teorico =      7.327 deg
+  lobo laterale massimo (teoria per N grande) misurato =    -13.147 dB    teorico =    -13.260 dB
+ theta0 = 60 deg  (alpha = -155.9 deg tra elementi)
+  direzione del massimo                      misurato =     60.000 deg   teorico =     60.000 deg
+  larghezza a -3 dB                          misurato =     12.972 deg   teorico =     12.691 deg
+  lobo laterale massimo (teoria per N grande) misurato =    -13.147 dB    teorico =    -13.260 dB
+ Perdita di scansione (diagramma dell'elemento cos(theta))
+  perdita a 0 deg (sola andata)              misurato =      0.000 dB    teorico =      0.000 dB
+  perdita a 30 deg (sola andata)             misurato =     -1.240 dB    teorico =     -1.249 dB
+  perdita a 45 deg (sola andata)             misurato =     -2.970 dB    teorico =     -3.010 dB
+  perdita a 60 deg (sola andata)             misurato =     -5.801 dB    teorico =     -6.021 dB
+ figura: python/figures/p01_puntamento.png
+==========================================================================================
+p02 - Rastremazione (N = 32, d = lambda/2)
+ Uniforme
+  lobo laterale massimo                      misurato =    -13.233 dB    teorico =    -13.260 dB
+  allargamento del fascio (rispetto uniforme) misurato =      1.000
+  efficienza di rastremazione                misurato =      1.000       perdita = -0.00 dB
+ Hamming
+  lobo laterale massimo                      misurato =    -41.762 dB    teorico =    -42.700 dB
+  allargamento del fascio (rispetto uniforme) misurato =      1.501
+  efficienza di rastremazione                misurato =      0.717       perdita = 1.44 dB
+ Taylor -30 dB, nbar=4
+  lobo laterale massimo                      misurato =    -30.243 dB    teorico =    -30.000 dB
+  allargamento del fascio (rispetto uniforme) misurato =      1.269
+  efficienza di rastremazione                misurato =      0.853       perdita = 0.69 dB
+ Chebyshev -30 dB
+  lobo laterale massimo                      misurato =    -30.000 dB    teorico =    -30.000 dB
+  allargamento del fascio (rispetto uniforme) misurato =      1.227
+  efficienza di rastremazione                misurato =      0.876       perdita = 0.58 dB
+ figura: python/figures/p02_rastremazione.png
+==========================================================================================
+p03 - Grating lobes (N = 16, theta0 = 50 deg)
+  spaziatura massima senza grating lobes: d < 0.566 lambda
+ d = 0.500 lambda: grating lobe teorico in u = -1.234 -> non visibile
+ d = 0.566 lambda: grating lobe teorico in u = -1.001 -> non visibile
+ d = 0.700 lambda: grating lobe teorico in u = -0.663 -> VISIBILE
+  posizione grating lobe (gradi)             misurato =    -41.495 deg   teorico =    -41.493 deg
+  livello grating lobe                       misurato =     -0.000 dB    teorico =      0.000 dB
+ d = 1.000 lambda: grating lobe teorico in u = -0.234 -> VISIBILE
+  posizione grating lobe (gradi)             misurato =    -13.530 deg   teorico =    -13.530 deg
+  livello grating lobe                       misurato =      0.000 dB    teorico =      0.000 dB
+ figura: python/figures/p03_grating_lobes.png
+==========================================================================================
+p04 - Quantizzazione degli sfasatori (N = 64, theta0 = 10 deg)
+ B = 3 bit (passo 45.00 deg)
+  perdita di guadagno con dithering          misurato =      0.235 dB    teorico =      0.229 dB
+  lobo di quantizzazione (errore periodico)  misurato =    -16.738 dB    teorico =    -18.060 dB
+  lobo spurio piu alto con dithering         misurato =    -22.808 dB
+ B = 4 bit (passo 22.50 deg)
+  perdita di guadagno con dithering          misurato =      0.054 dB    teorico =      0.056 dB
+  lobo di quantizzazione (errore periodico)  misurato =    -23.517 dB    teorico =    -24.080 dB
+  lobo spurio piu alto con dithering         misurato =    -30.193 dB
+ B = 5 bit (passo 11.25 deg)
+  perdita di guadagno con dithering          misurato =      0.015 dB    teorico =      0.014 dB
+  lobo di quantizzazione (errore periodico)  misurato =    -28.786 dB    teorico =    -30.100 dB
+  lobo spurio piu alto con dithering         misurato =    -34.511 dB
+  nota: il livello esatto del lobo di quantizzazione dipende da theta0; -6B dB e' un valore indicativo (circa 1-2 dB).
+        Con il dithering il lobo spurio scompare e resta solo un fondo di lobi laterali piu' alto.
+ figura: python/figures/p04_quantizzazione.png
+==========================================================================================
+p05 - Squint (N = 64, theta0 = 45 deg)
+  direzione con sfasatori a f = 0.95 f0      misurato =     48.101 deg   teorico =     48.101 deg
+  direzione con TTD a f = 0.95 f0            misurato =     45.000 deg   teorico =     45.000 deg
+  direzione con sfasatori a f = 1.05 f0      misurato =     42.333 deg   teorico =     42.333 deg
+  direzione con TTD a f = 1.05 f0            misurato =     45.000 deg   teorico =     45.000 deg
+  squint per df/f0 = +2% (linearizzato)      misurato =     -1.113 deg   teorico =     -1.146 deg
+  perdita in theta0 a f = 1,02 f0 con sfasatori: -3.15 dB
+  perdita in theta0 a f = 1,02 f0 con TTD:       0.00 dB
+  larghezza del fascio a f0: 2.24 deg -> banda utile con sfasatori ~ theta3dB/tan(theta0) = 3.9 %
+ figura: python/figures/p05_squint.png
+==========================================================================================
+p06 - Multifascio di Butler (N = 8, d = lambda/2)
+  fascio -3: direzione                       misurato =    -61.045 deg   teorico =    -61.045 deg
+  fascio -2: direzione                       misurato =    -38.682 deg   teorico =    -38.682 deg
+  fascio -1: direzione                       misurato =    -22.024 deg   teorico =    -22.024 deg
+  fascio +0: direzione                       misurato =     -7.181 deg   teorico =     -7.181 deg
+  fascio +1: direzione                       misurato =      7.181 deg   teorico =      7.181 deg
+  fascio +2: direzione                       misurato =     22.024 deg   teorico =     22.024 deg
+  fascio +3: direzione                       misurato =     38.682 deg   teorico =     38.682 deg
+  fascio +4: direzione                       misurato =     61.045 deg   teorico =     61.045 deg
+  massimo fuori diagonale (ortogonalita')    misurato =   -296.726 dB    teorico =   -300.000 dB
+  incrocio tra fasci adiacenti (teoria N grande) misurato =     -3.867 dB    teorico =     -3.920 dB
+  FFT: uscite dei canali per un'onda dal fascio +2: [0. 0. 0. 0. 0. 0. 1. 0.]
+ figura: python/figures/p06_multifascio.png
+==========================================================================================
+p07 - Monopulse (N = 32, d = lambda/2)
+  pendenza monopulse km                      misurato =     25.161       teorico =     25.133 
+  rapporto in u = 0,03 vs tan(N pi u / 4)    misurato =      0.939       teorico =      0.939 
+ Monte Carlo: bersaglio in u = 0.003, 4000 prove per ogni SNR
+  sigma_u con SNR_Sigma = 10 dB (x 1e-3)     misurato =      9.556       teorico =      8.897 
+  sigma_u con SNR_Sigma = 15 dB (x 1e-3)     misurato =      5.085       teorico =      5.003 
+  sigma_u con SNR_Sigma = 20 dB (x 1e-3)     misurato =      2.858       teorico =      2.813 
+  sigma_u con SNR_Sigma = 25 dB (x 1e-3)     misurato =      1.607       teorico =      1.582 
+  sigma_u con SNR_Sigma = 30 dB (x 1e-3)     misurato =      0.888       teorico =      0.890 
+  larghezza del fascio in u: 0.0554; con SNR = 20 dB la precisione e' 1/20 del fascio
+ figura: python/figures/p07_monopulse.png
+==========================================================================================
+p08 - Beamforming adattativo (N = 16, 2 disturbatori a 40 dB)
+  SINR ottimo (pesi MVDR) rispetto a SNR di N elementi misurato =     -0.028 dB    teorico =     -0.028 dB
+  SINR beamformer convenzionale (rispetto a N) misurato =    -30.219 dB
+  guadagno verso il disturbatore a +35 deg: convenzionale -22.3 dB, MVDR -96.9 dB
+  guadagno verso il disturbatore a -50 deg: convenzionale -31.6 dB, MVDR -82.8 dB
+ SMI - perdita media di SINR (200 prove per K)
+  K =  16 campioni                           misurato =     -9.123 dB    teorico =     -9.294 dB
+  K =  24 campioni                           misurato =     -4.029 dB    teorico =     -3.979 dB
+  K =  32 campioni                           misurato =     -2.608 dB    teorico =     -2.632 dB
+  K =  64 campioni                           misurato =     -1.138 dB    teorico =     -1.139 dB
+  K = 128 campioni                           misurato =     -0.539 dB    teorico =     -0.537 dB
+ figura: python/figures/p08_mvdr.png
+==========================================================================================
+p09 - Catena range-Doppler e CA-CFAR (3 GHz, B = 5 MHz, M = 32)
+  risoluzione in distanza (larghezza -3 dB)  misurato =     26.416 m     teorico =     26.580 m
+  lobo laterale di compressione              misurato =    -13.552 dB    teorico =    -13.260 dB
+  guadagno di compressione (campioni T*fs)   misurato =     20.000 dB    teorico =     20.000 dB
+  rapporto di compressione B*T = 50: l'impulso da 10 us diventa lungo circa 200 ns
+  soglia CA-CFAR alpha = 17.28 (12.4 dB), risoluzione in velocita' 6.45 m/s
+  bersaglio 12.00 km: distanza               misurato =  12000.000 m     teorico =  12000.000 m
+  bersaglio 12.00 km: velocita' (entro 6.5 m/s) misurato =     38.710 m/s   teorico =     40.000 m/s
+  bersaglio 20.01 km: distanza               misurato =  20010.000 m     teorico =  20010.000 m
+  bersaglio 20.01 km: velocita' (entro 6.5 m/s) misurato =    -25.806 m/s   teorico =    -25.000 m/s
+  celle oltre soglia in totale: 19: i due bersagli piu' qualche residuo di clutter vicino a velocita' zero
+  Pfa con tutte le celle (x 1e-3)            misurato =      1.553       teorico =      1.000 
+  Pfa con celle indipendenti (x 1e-3)        misurato =      0.944       teorico =      1.000 
+  le celle a passo 1/fs = 1/(2B) sono correlate: la media del CA-CFAR stima peggio il rumore e i falsi allarmi crescono
+ figura: python/figures/p09_range_doppler.png
+==========================================================================================
+p10 - Gestione delle risorse (420 posizioni di sorveglianza da 4 ms)
+   0 tracce: carico di inseguimento   0.0 %
+    tempo di rivisita della sorveglianza     misurato =      1.680 s     teorico =      1.680 s
+    ritardo degli aggiornamenti di traccia: medio 0.00 ms, massimo 0.00 ms
+    portata di sorveglianza a rivisita fissa: 100.0 % di quella senza tracce
+  50 tracce: carico di inseguimento  17.2 %
+    tempo di rivisita della sorveglianza     misurato =      2.029 s     teorico =      2.029 s
+    ritardo degli aggiornamenti di traccia: medio 2.05 ms, massimo 5.13 ms
+    portata di sorveglianza a rivisita fissa: 95.4 % di quella senza tracce
+ 100 tracce: carico di inseguimento  35.0 %
+    tempo di rivisita della sorveglianza     misurato =      2.582 s     teorico =      2.585 s
+    ritardo degli aggiornamenti di traccia: medio 2.57 ms, massimo 8.09 ms
+    portata di sorveglianza a rivisita fissa: 89.8 % di quella senza tracce
+ 150 tracce: carico di inseguimento  52.2 %
+    tempo di rivisita della sorveglianza     misurato =      3.512 s     teorico =      3.515 s
+    ritardo degli aggiornamenti di traccia: medio 3.21 ms, massimo 12.61 ms
+    portata di sorveglianza a rivisita fissa: 83.1 % di quella senza tracce
+ 200 tracce: carico di inseguimento  70.0 %
+    tempo di rivisita della sorveglianza     misurato =      5.596 s     teorico =      5.600 s
+    ritardo degli aggiornamenti di traccia: medio 3.79 ms, massimo 13.16 ms
+    portata di sorveglianza a rivisita fissa: 74.0 % di quella senza tracce
+ 250 tracce: carico di inseguimento  87.2 %
+    tempo di rivisita della sorveglianza     misurato =     13.082 s     teorico =     13.125 s
+    ritardo degli aggiornamenti di traccia: medio 6.18 ms, massimo 16.44 ms
+    portata di sorveglianza a rivisita fissa: 59.8 % di quella senza tracce
+    con degrado controllato: carico 70.0 %, rivisita 5.60 s, ritardo massimo tracce 14.0 ms
+      (le tracce non in manovra passano da 1 s a 1.84 s)
+ 300 tracce: carico di inseguimento 105.0 %
+    SATURAZIONE: la sorveglianza non completa mai la scansione, ritardo massimo delle tracce 1447 ms
+    con degrado controllato: carico 70.0 %, rivisita 5.60 s, ritardo massimo tracce 24.9 ms
+      (le tracce non in manovra passano da 1 s a 4.50 s)
+ figura: python/figures/p10_gestione_risorse.png
+==========================================================================================
+Completato in 21.2 s
